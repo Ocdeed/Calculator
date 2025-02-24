@@ -1,0 +1,236 @@
+:root {
+  --bg-dark: #1c2526;
+  --button-bg: #2d3839;
+  --text-light: #ffffff;
+  --operator-color: #ff9500;
+  --sci-button-color: #6b7280;
+  --button-size: 60px;
+  --button-spacing: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", Arial, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator-container {
+  display: flex;
+  gap: 20px;
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+}
+
+.calculator {
+  background-color: var(--button-bg);
+  padding: 20px;
+  border-radius: 20px;
+  width: 400px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.calculator-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text-light);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.display {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.expression {
+  font-size: 14px;
+  opacity: 0.7;
+  min-height: 20px;
+  text-align: right;
+}
+
+.result {
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: bold;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.buttons {
+  display: grid;
+  gap: var(--button-spacing);
+}
+
+.basic-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--button-spacing);
+}
+
+button {
+  width: var(--button-size);
+  height: var(--button-size);
+  border-radius: 50%;
+  border: none;
+  background-color: var(--button-bg);
+  color: var(--text-light);
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.2s;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.operator {
+  background-color: var(--operator-color);
+}
+
+.equals {
+  background-color: var(--operator-color);
+}
+
+.wide {
+  grid-column: span 2;
+  width: calc(var(--button-size) * 2 + var(--button-spacing));
+  border-radius: 30px;
+}
+
+.scientific-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--button-spacing);
+  margin-top: var(--button-spacing);
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: var(--button-spacing);
+  border-radius: 10px;
+}
+
+.sci-op {
+  background-color: var(--sci-button-color);
+  font-size: 16px;
+}
+
+.sci-op:hover {
+  background-color: var(--sci-button-color);
+  opacity: 0.8;
+}
+
+.hidden {
+  display: none;
+}
+
+.scientific-buttons.hidden {
+  display: none;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.scientific-buttons {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.memory-indicator {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.memory-active {
+  opacity: 1;
+}
+
+.history-panel {
+  width: 300px;
+  background-color: var(--button-bg);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.history-list {
+  list-style: none;
+}
+
+.history-list li {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.history-list li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.calculator-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--text-light);
+  opacity: 0.7;
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+}
+
+.credit-link {
+  color: var(--operator-color);
+  text-decoration: none;
+  font-weight: 700;
+  transition: opacity 0.2s ease;
+}
+
+.credit-link:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .calculator-container {
+    flex-direction: column;
+  }
+
+  .calculator {
+    width: 100%;
+  }
+
+  :root {
+    --button-size: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --button-size: 45px;
+    --button-spacing: 8px;
+  }
+
+  .calculator {
+    padding: 15px;
+  }
+}

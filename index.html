@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scientific Calculator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="calculator-container">
+      <main class="calculator">
+        <h1 class="calculator-title">Scientific Calculator</h1>
+        <div class="display">
+          <div class="expression" aria-live="polite"></div>
+          <div class="result" aria-live="polite">0</div>
+          <div class="memory-indicator" aria-label="Memory indicator">M</div>
+        </div>
+        <div class="mode-switch">
+          <button class="toggle-sci" aria-label="Toggle scientific mode">
+            SCI
+          </button>
+          <button class="toggle-angle" aria-label="Toggle angle mode">
+            <span class="angle-mode">DEG</span>
+          </button>
+          <button class="toggle-history" aria-label="Toggle history">
+            History
+          </button>
+        </div>
+        <div class="buttons">
+          <div class="basic-buttons">
+            <button class="memory" aria-label="Memory clear">MC</button>
+            <button class="memory" aria-label="Memory recall">MR</button>
+            <button class="memory" aria-label="Memory add">M+</button>
+            <button class="memory" aria-label="Memory subtract">M-</button>
+
+            <button class="clear" aria-label="All clear">AC</button>
+            <button class="operator" aria-label="Plus minus">±</button>
+            <button class="operator" aria-label="Percentage">%</button>
+            <button class="operator" aria-label="Divide">÷</button>
+
+            <button class="digit" aria-label="Seven">7</button>
+            <button class="digit" aria-label="Eight">8</button>
+            <button class="digit" aria-label="Nine">9</button>
+            <button class="operator" aria-label="Multiply">×</button>
+
+            <button class="digit" aria-label="Four">4</button>
+            <button class="digit" aria-label="Five">5</button>
+            <button class="digit" aria-label="Six">6</button>
+            <button class="operator" aria-label="Subtract">-</button>
+
+            <button class="digit" aria-label="One">1</button>
+            <button class="digit" aria-label="Two">2</button>
+            <button class="digit" aria-label="Three">3</button>
+            <button class="operator" aria-label="Add">+</button>
+
+            <button class="digit wide" aria-label="Zero">0</button>
+            <button class="digit" aria-label="Decimal point">.</button>
+            <button class="equals" aria-label="Equals">=</button>
+          </div>
+          <div class="scientific-buttons hidden">
+            <button class="sci-op" aria-label="Sine">sin</button>
+            <button class="sci-op" aria-label="Cosine">cos</button>
+            <button class="sci-op" aria-label="Tangent">tan</button>
+            <button class="sci-op" aria-label="Pi">π</button>
+
+            <button class="sci-op" aria-label="Inverse sine">sin⁻¹</button>
+            <button class="sci-op" aria-label="Inverse cosine">cos⁻¹</button>
+            <button class="sci-op" aria-label="Inverse tangent">tan⁻¹</button>
+            <button class="sci-op" aria-label="Euler number">e</button>
+
+            <button class="sci-op" aria-label="Hyperbolic sine">sinh</button>
+            <button class="sci-op" aria-label="Hyperbolic cosine">cosh</button>
+            <button class="sci-op" aria-label="Hyperbolic tangent">tanh</button>
+            <button class="sci-op" aria-label="Random number">rand</button>
+
+            <button class="sci-op" aria-label="Square">x²</button>
+            <button class="sci-op" aria-label="Cube">x³</button>
+            <button class="sci-op" aria-label="Power">xʸ</button>
+            <button class="sci-op" aria-label="Square root">√</button>
+
+            <button class="sci-op" aria-label="Factorial">x!</button>
+            <button class="sci-op" aria-label="Natural logarithm">ln</button>
+            <button class="sci-op" aria-label="Log base 10">log</button>
+            <button class="sci-op" aria-label="Absolute value">|x|</button>
+          </div>
+        </div>
+      </main>
+      <aside class="history-panel hidden">
+        <h2>History</h2>
+        <ul class="history-list"></ul>
+      </aside>
+    </div>
+    <footer class="calculator-footer">
+      <p>© 2025 Created by <a href="#" class="credit-link">ocdeedcodes</a></p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
